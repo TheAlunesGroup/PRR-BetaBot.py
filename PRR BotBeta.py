@@ -9,9 +9,9 @@ def Booking():
             NoAE = Entry(root) 
             NoAE.pack()
             NoC5L = Label(root, text="How many children(0-5)") 
-            NoC5E = Entry(root)
+            NoC50 = Entry(root)
             NoC5L.pack()
-            NoC5E.pack() 
+            NoC50.pack() 
             NoC6L = Label(root, text="How many children aged (6-12)")  
             NoC6E = Entry(root)  
             NoC6L.pack()
@@ -19,9 +19,9 @@ def Booking():
             def Cal(): 
                 check = 0
                 NoA = int(NoAE.get()) 
-                NoC5 = int(NoC5E.get())
+                NoC5 = int(NoC50.get())
                 NoC6 = int(NoC6E.get())  
-                Name = str(Name.get())
+                Name = name.get()
                 if NoA < 2: 
                     while check < 1: 
                         Error = Label(root, text="Error, the amount of people is less than 2") 
@@ -46,20 +46,18 @@ def Booking():
                         NoC6_price = 0 
                     case 1: 
                         print("Place Holder")
-                    case 2:
-                        NoC6_price = 10000 
-                Full_Price = NoA_Price + NoC6_Price + NoA_price 
-                Result = Label(root, text=f"Booking Details\n Name:{Name}") 
+                Full_Price = NoA_Price + NoC6_Price + NoA_price
+                Result = Label(root, text=f"Booking Details\n Name:{Name} \n Total Price:{Full_Price}") 
                 Result.pack()
             Next = Button(root, text="Next", command=Cal) 
             Next.pack()
 
         Board = Label(root, text="Select the board") 
-        BB = Button(root, text="BB", command=BB)
+        BB1 = Button(root, text="BB", command=BB)
         HB = Button(root, text="HB") 
         FB = Button(root, text="FB") 
         Board.pack()
-        BB.pack()
+        BB1.pack()
         HB.pack()
         FB.pack() 
 
