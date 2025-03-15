@@ -1,77 +1,10 @@
 from colorama import Fore, Back, Style, init 
 from tkinter import * 
 from datetime import datetime
-def Booking():  
+def Booking():   
     def Delux(): 
-        def BB(): 
-            NoAL = Label(root, text="How many adluts:") 
-            NoAL.pack() 
-            NoAE = Entry(root) 
-            NoAE.pack()
-            NoC5L = Label(root, text="How many children(0-5)") 
-            NoC50 = Entry(root)
-            NoC5L.pack()
-            NoC50.pack() 
-            NoC6L = Label(root, text="How many children aged (6-12)")  
-            NoC6E = Entry(root)  
-            NoC6L.pack()
-            NoC6E.pack() 
-            def Cal(): 
-                check = 0
-                NoA = int(NoAE.get()) 
-                NoC5 = int(NoC50.get())
-                NoC6 = int(NoC6E.get())  
-                Name = name.get()
-                if NoA < 2: 
-                    while check < 1: 
-                        Error = Label(root, text="Error, the amount of people is less than 2") 
-                        NoAL = Label(root, text="How many adluts:") 
-                        NoAL.pack() 
-                        if NoA > 1: 
-                            check = 1 
-                        else: 
-                            check = 0 
-                check = 1
-                NoA_Price = NoA * 12000 
-                if NoC6 == 0:
-                    NoC6_Price = 0 
-                NoC6_Price = NoC6 * 6000 
-                match NoA:
-                    case 2:
-                        NoA_price = 20000 
-                    case 3:
-                        NoA_price = 26000 
-                match NoC6:
-                    case 0: 
-                        NoC6_price = 0 
-                    case 1: 
-                        print("Place Holder")
-                Full_Price = NoA_Price + NoC6_Price + NoA_price
-                Result = Label(root, text=f"Booking Details\n Name:{Name} \n Total Price:{Full_Price}") 
-                Result.pack()
-            Next = Button(root, text="Next", command=Cal) 
-            Next.pack()
-
-        Board = Label(root, text="Select the board") 
-        BB1 = Button(root, text="BB", command=BB)
-        HB = Button(root, text="HB") 
-        FB = Button(root, text="FB") 
-        Board.pack()
-        BB1.pack()
-        HB.pack()
-        FB.pack() 
-
-    Name = Label(root, text="Name:") 
-    name = Entry(root) 
-    Name.pack()
-    name.pack() 
-    Date = Label(root, text="Date(YYYY/MM/DD)") 
-    date = Entry(root) 
-    Date.pack()
-    date.pack() 
-    DateGet = date.get()
-    next = Button(root, text="next", command=Delux) 
-    next.pack()
+        NoAL = Label(root, text="How many adults(12 and above)") 
+        NoAE = Entry(root) 
 root = Tk() 
 root.title("PRR Bot") 
 INT = Label(root, text="Welcome to PowerHouse River Resort, choose the following") 
