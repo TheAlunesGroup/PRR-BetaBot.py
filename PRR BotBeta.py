@@ -1,19 +1,60 @@
-from colorama import Fore, Back, Style, init 
+
 from tkinter import * 
 from datetime import datetime
-def Booking():   
-    def Delux(): 
-        NoAL = Label(root, text="How many adults(12 and above)") 
-        NoAE = Entry(root) 
+def Booking():    
+    def BB():  
+        def ROOM1(): 
+            def Cal(): 
+                NoA = NoAE.get() 
+                Noc5 = NoC5E.get()
+            NoAL = Label(root, text="How Many Adults(12 and Above)") 
+            NoAE = Entry(root) 
+            NoC5L = Label(root, text="How Many Children(0-5)") 
+            NoC5E = Entry(root)
+            NoC6L = Label(root, text="How many Children(6-12)")
+            NoC6E = Entry(root) 
+            NoAL.grid(row=10, column=0)
+            NoAE.grid(row=11, column=0)
+            NoC5L.grid(row=12, column=0)
+            NoC5E.grid(row=13, colmun=0)
+            NoC6L.grid(row=14, column=0)
+            NoC6E.grid(row=15, column=0) 
+            Next = Button(root, text="Next")
+        Room = Label(root, text="How many rooms") 
+        Room.grid(row=6, column=0) 
+        Room1 = Button(root, text="ROOM1") 
+        Room1.grid(row=7, column=0) 
+        Room2 = Button(root, text="ROOM2") 
+        Room2.grid(row=8, column=0)
+        Room3 = Button(root, text="ROOM3") 
+        Room3.grid(row=9, column=0)
+        Room4 = Button(root, text="ROOM4") 
+        Room4.grid(row=10, column=0)
+
+    Name = Label(root, text="Name:", font=("Century Gothic", 20))  
+    name = Entry(root, font=(26)) 
+    Name.grid(row=0, column=0) 
+    name.grid(column=1, row=0)
+    Date = Label(root, text="Date:", font=("Century Gothic", 20)) 
+    date = Entry(root, font=(26)) 
+    Date.grid(row=1, column=0) 
+    date.grid(row=1, column=1) 
+    Board = Label(root, text="Select the Board:", font=("Century Gothic", 20)) 
+    Board.grid(row=2, column=0) 
+    BB = Button(root, text="Bed and Breakfirst(BB)", command=BB) 
+    HB = Button(root, text="Half Board(HB)") 
+    FB = Button(root, text="Full Board(FB)") 
+    BB.grid(row=3, column=0) 
+    HB.grid(row=4, column=0) 
+    FB.grid(row=5, column=0)
+
 root = Tk() 
 root.title("PRR Bot") 
-INT = Label(root, text="Welcome to PowerHouse River Resort, choose the following") 
-root.geometry("0900x900")
-Booking = Button(root, text="Booking", command=Booking)
-INT.pack()
-Booking.pack(pady=5) 
+INT = Label(root, text="Bookie Bot") 
+root.geometry("0900x900") 
+Booking()
 root.mainloop()
-
+ 
 
 
 def booking(): 
@@ -989,5 +1030,5 @@ response = str(input(""))
 if response == "booking_" or response == "Booking_": 
     booking() 
 elif response == "Learnmore_" or response == "learnmore_": 
-    print(Fore.GREEN + "coming soon") 
+    print("coming soon") 
 # The last line 1037
