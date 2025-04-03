@@ -1,60 +1,122 @@
 
-from tkinter import * 
-from datetime import datetime
-def Booking():    
-    def BB():  
-        def ROOM1(): 
-            def Cal(): 
-                NoA = NoAE.get() 
-                Noc5 = NoC5E.get()
-            NoAL = Label(root, text="How Many Adults(12 and Above)") 
-            NoAE = Entry(root) 
-            NoC5L = Label(root, text="How Many Children(0-5)") 
-            NoC5E = Entry(root)
-            NoC6L = Label(root, text="How many Children(6-12)")
-            NoC6E = Entry(root) 
-            NoAL.grid(row=10, column=0)
-            NoAE.grid(row=11, column=0)
-            NoC5L.grid(row=12, column=0)
-            NoC5E.grid(row=13, colmun=0)
-            NoC6L.grid(row=14, column=0)
-            NoC6E.grid(row=15, column=0) 
-            Next = Button(root, text="Next")
-        Room = Label(root, text="How many rooms") 
-        Room.grid(row=6, column=0) 
-        Room1 = Button(root, text="ROOM1") 
-        Room1.grid(row=7, column=0) 
-        Room2 = Button(root, text="ROOM2") 
-        Room2.grid(row=8, column=0)
-        Room3 = Button(root, text="ROOM3") 
-        Room3.grid(row=9, column=0)
-        Room4 = Button(root, text="ROOM4") 
-        Room4.grid(row=10, column=0)
+from tkinter import *   
+import customtkinter
+import pexpect
 
-    Name = Label(root, text="Name:", font=("Century Gothic", 20))  
-    name = Entry(root, font=(26)) 
+#from datetime import datetime  
+
+def GUI(): 
+  customtkinter.set_appearance_mode("light") 
+  customtkinter.set_default_color_theme("green")
+  root = customtkinter.CTk() 
+  root.title("PRR Bot") 
+  root.geometry("600x900") 
+  def Booking():    
+    def Board_Selecter(values):
+        if values == "BB":
+            Rooms_Amount = customtkinter.CTkLabel(root, text="  How many rooms:        ",font=("Century Gothic", 20))
+            Rooms_Amount.grid(row=3, column=0)  
+            def Room_N(values): 
+                if values == "one":
+                    Type_Room = customtkinter.CTkLabel(root, text="Type of room                ", font=("Century Gothic", 20), justify=("left"))
+                    Type_Room.grid(row=4, column=0)   
+                    def Delux():  
+
+                        NoAL = customtkinter.CTkLabel(root, text="How many adults aged(12 above)", font=("Century Gothic", 20)) 
+                        NoAL.grid(row=5, column=0) 
+                        NoAE = customtkinter.CTkEntry(root) 
+                        NoAE.grid(row=5, column=1) 
+                        NoC5L = customtkinter.CTkLabel(root, text="Children(0-5)", font=("Century Gothic", 20)) 
+                        NoC5L.grid(row=6, column=0) 
+                        NoC5E = customtkinter.CTkEntry(root)
+                        NoC5E.grid(row=6, column=1)
+                        NoC6L = customtkinter.CTkLabel(root, text="Children(6-11)", font=("Century Gothic", 20)) 
+                        NoC6L.grid(row=7, column=0) 
+                        NoC6E = customtkinter.CTkEntry(root)
+                        NoC6E.grid(row=7, column=1) 
+                        def Calculate(): 
+                            NoA = NoAE.get()
+                            NoC5 = NoC5E.get() 
+                            NoC6 = NoC6E.get() 
+                            try: 
+                                NoA = int(NoA) 
+                                NoC5 = int(NoC5) 
+                                NoC6 = int(NoC6) 
+                            except ValueError or NoA == () or NoC5 == () or NoC6 ==() or NoA < 2:
+                                    NoAE.configure(text="ERROR") 
+                                    NoC5E.configure(text="ERROR") 
+                                    NoC6E.configure(text="ERROR")   
+                            if (NoA+NoC5+NoC6) > 3:
+                                    NoAE.configure(text="ERROR") 
+                                    NoC5E.configure(text="ERROR") 
+                                    NoC6E.configure(text="ERROR")  
+                            NoA_Price = NoA * 12000  
+                            if NoC6 == 0: 
+                                NoC6_Price = 0
+                            NoC6_Price = NoC6 * 4000 
+                            match NoA: 
+                                case 2: 
+                                    NoA_price = 20000 
+                                case 3: 
+                                    NoA_price = 26000    
+                            def refresh():  
+                                Name = name.get() 
+           
+                                NoA = NoAE.get() 
+                                NoC5 = NoC5E.get() 
+                                NoC6 = NoC6E.get() 
+                                Choose1 = Choose.get()  
+                                add = int(NoA + NoC5 + NoC6) 
+                                add_p = int(NoA_Price+NoA_price+NoC6_Price) 
+                                ExtraMeal
+                            def ExtraMeal(values):           
+                                if values == "Normal":  
+                                    add = int(NoA + NoC5 + NoC6)
+                                    add_p = int(NoA_Price+NoA_price+NoC6_Price) 
+                                    Result = customtkinter.CTkLabel(root, text = (f"Booking Summary \n Name: {name.get()} \n Date: \n Board: {Board1.get()} \n Amount of people: {add} \n Total Price: {(add_p) + (int(NoA)*2000) + int(NoC6)*1000}"), font=("Century Gothic", 20))
+                                    Result.grid(row=10 , column=0) 
+                                    Refresh = customtkinter.CTkButton(root, text="Refrsh", command=refresh) 
+                                    Refresh.grid(row=14, column=0) 
+                                elif values == "BBQ":
+                                    add = int(NoA + NoC5 + NoC6)
+                                    add_p = int(NoA_Price+NoA_price+NoC6_Price) 
+                                    Result = customtkinter.CTkLabel(root, text = (f"Booking Summary \n Name: {name.get()} \n Date: \n Board: {Board1.get()} \n Amount of people: {add} \n Total Price: {(add_p) + int(NoA*4000+int(NoC6*2000))}"), font=("Century Gothic", 20))
+                                    Result.grid(row=10 , column=0) 
+                                    Refresh = customtkinter.CTkButton(root, text="Refrsh", command=refresh) 
+                                    Refresh.grid(row=14, column=0) 
+                            ChooseL = customtkinter.CTkLabel(root, text="Extra Meal Options", font=("Century Gothic", 20)) 
+                            ChooseL.grid(row=9, column=0)
+                            Choose = customtkinter.CTkComboBox(root, values=["Select", "Normal", "BBQ"], font=("Century Gothic", 20), command = ExtraMeal) 
+                            Choose.grid(row=9, column=1) 
+                        Next = customtkinter.CTkButton(root, text="Next", font=("Century Gothic", 20), command=Calculate) 
+                        Next.grid(row=8, column=0)
+                    def SelecterR(values): 
+                        if values == "Delux":
+                            Delux()
+                    RoomSelect = customtkinter.CTkComboBox(root, values=["Selected", "Delux", "Standard"], font=("Century Gothic", 20), command=SelecterR) 
+                    RoomSelect.grid(row=4, column=1) 
+
+            RoomComboBox = customtkinter.CTkComboBox(root, values=["Select", "one", "two", "three", "four"], command=Room_N, font=("Century Gothic", 20))
+            RoomComboBox.grid(row=3, column=1)
+    Name = customtkinter.CTkLabel(root, text="  Name:                 ", font=("Custom Gothic", 20), justify="left")  
+    name = customtkinter.CTkEntry(root, font=("Century Gothic", 26), justify="left") 
     Name.grid(row=0, column=0) 
     name.grid(column=1, row=0)
-    Date = Label(root, text="Date:", font=("Century Gothic", 20)) 
-    date = Entry(root, font=(26)) 
+    Date = customtkinter.CTkLabel(root, text="  Date:                ", font=("Century Gothic", 20)) 
+    date_Month = customtkinter.CTkComboBox(root, values=["Month", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]) 
     Date.grid(row=1, column=0) 
-    date.grid(row=1, column=1) 
-    Board = Label(root, text="Select the Board:", font=("Century Gothic", 20)) 
-    Board.grid(row=2, column=0) 
-    BB = Button(root, text="Bed and Breakfirst(BB)", command=BB) 
-    HB = Button(root, text="Half Board(HB)") 
-    FB = Button(root, text="Full Board(FB)") 
-    BB.grid(row=3, column=0) 
-    HB.grid(row=4, column=0) 
-    FB.grid(row=5, column=0)
+    date_Month.grid(row=1, column=1) 
+    date_Day = customtkinter.CTkComboBox(root, values=["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "20", "21", "22", "23", "24", "25", "26", "27","28","30", "31"])
+    date_year = customtkinter.CTkComboBox(root, values=["2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035"]) 
+    date_Day.grid(row=1, column=2) 
+    date_year.grid(row=1, column=3)
+    Board = customtkinter.CTkLabel(root, text="  Board:                ", font=("Century Gothic", 20)) 
+    Board.grid(row=2, column=0)  
+    Board1 = customtkinter.CTkComboBox(root, values=["Select","BB", "HB", "FB"], command=Board_Selecter, font=("Century Gothic", 20))
+    Board1.grid(row=2, column=1)
+  Booking() 
+  root.mainloop()
 
-root = Tk() 
-root.title("PRR Bot") 
-INT = Label(root, text="Bookie Bot") 
-root.geometry("0900x900") 
-Booking()
-root.mainloop()
- 
 
 
 def booking(): 
@@ -198,7 +260,7 @@ def booking():
                     price_RMC6 = 9000
                 case 2: 
                     price_RMC6 = 10500  
-            
+                
             add_price = price_RMA + price_RMC6 + Price_NoA + Price_NoC6 
             print("This will be sent to the owner:") 
             print(f"name:{Name}") 
@@ -1030,5 +1092,8 @@ response = str(input(""))
 if response == "booking_" or response == "Booking_": 
     booking() 
 elif response == "Learnmore_" or response == "learnmore_": 
-    print("coming soon") 
+    print("coming soon")  
+elif response == "GUI" or response == "gui":
+    GUI()
+
 # The last line 1037
