@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(page_title = "PowerHouse River Resort", page_icon = "Logo.png", layout="wide")
 
 st.header("PowerHouse River Resort", divider="green")
 st.write("Enter the following information")
@@ -7,6 +8,7 @@ Name_Entry = st.text_input("Name:")
 Starting_Date = st.date_input("Starting Date:")
 Ending_Date = st.date_input("Ending Date:")
 Board = st.write("Select a Meal Plan")
+
 
 def BB_Func():
 
