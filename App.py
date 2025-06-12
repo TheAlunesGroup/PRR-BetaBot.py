@@ -1,107 +1,54 @@
 import streamlit as st
-st.set_page_config(page_title = "PowerHouse River Resort", page_icon = "Logo.png", layout="wide")
+from PIL import Image
+st.set_page_config(page_title = "PowerHouse River Resort", page_icon = "Logo.png")
 
+image = Image.open("PowerHouse_River_Resort.jpg")
+
+st.image(image, width=300)
 st.header("PowerHouse River Resort", divider="green")
-st.write("Enter the following information")
+st.write("")
+with st.form("Booking Registration"):
+    st.subheader("Basic Registration")
+    Name_Entry = st.text_input("Name:")
+    Starting_Date = st.date_input("Check-in Date:")
+    Ending_Date = st.date_input("Check-out Date:")
+    Board_Select_Box = st.selectbox("Choose a Meal Plan", ["BB", "HB", "FB"])
+    Amount_of_Rooms_Select_Box = st.number_input("Amount of Rooms", min_value=1, max_value=4)
+    if Amount_of_Rooms_Select_Box == 1:
+        Type_of_Room_1 = st.selectbox("Type of Room", ["Deluxe", "Standard"])
+        st.subheader("Amount of Pax")
+        Number_of_Adults_1 = st.number_input("Adults(Aged 12 & Above)", min_value=2, max_value=3)
+        Number_of_Children_0_5_1 = st.number_input("Children(Aged 0-5)", min_value=0, max_value=1)
+        Number_of_Children_6_11_1 = st.number_input("Children(Aged 6-11)", min_value=0, max_value=1)
+        BN = st.selectbox("Extra Meal Options", ["BBQ", "Normal"])
 
-Name_Entry = st.text_input("Name:")
-Starting_Date = st.date_input("Starting Date:")
-Ending_Date = st.date_input("Ending Date:")
-Board = st.write("Select a Meal Plan")
+    Submit = st.form_submit_button("Submit")
 
-
-def BB_Func():
-
-        if "Select_a_Board" not in st.session_state:
-            st.session_state.Select_a_Board = False
-        if  st.button("BB"):
-            st.session_state.Select_a_Board = not st.session_state.Select_a_Board
-        if st.session_state.Select_a_Board:
-            st.write("Amount of Rooms")
-            if "Amount_of_Rooms" not in st.session_state:
-                st.session_state.Amount_of_Rooms = False
-            if st.button("One"):
-                st.session_state.Amount_of_Rooms = not st.session_state.Amount_of_Rooms
-            if st.session_state.Amount_of_Rooms:
-                st.write("Type of Room")
-                if "Type_of_Room" not in st.session_state:
-                    st.session_state.Type_of_Room = False
-                if st.button("Deluxe"):
-                    st.session_state.Type_of_Room = not st.session_state.Type_of_Room
-                if st.session_state.Type_of_Room:
-                    st.write("Enter the amount of Pax")
-                    Number_of_Adults = (st.text_input("Amount of Adults(12&above)"))
-                    Number_of_Children_0_5 = (st.text_input("Amount of Children(0-5)"))
-                    Number_of_Children_6_11 = (st.text_input("Amount 0f Children(6-11)"))
-
-                    if "TAG" not in st.session_state:
-                        st.session_state.TAG = False
-                    if st.button("Next"):
-                        st.session_state.TAG = not st.session_state.TAG
-                    if st.session_state.TAG:
-                        if not Name_Entry:
-                            st.error("Please enter the name to continue")
-                        if Ending_Date < Starting_Date:
-                            st.error("The Ending Date cannot be set before the starting date")
-                        if Starting_Date > Ending_Date:
-                            st.error("The Starting Date cannot be greater than the ending date")
-                        if Starting_Date == Ending_Date:
-                            st.error("Both Dates cannot be in the same day")
-
-                        try:
-                            Number_of_Adults = int(Number_of_Adults)
-                            Number_of_Children_0_5 = int(Number_of_Children_0_5)
-                            Number_of_Children_6_11 = int(Number_of_Children_6_11)
-
-                        except ValueError or int(Number_of_Adults+Number_of_Children_0_5+Number_of_Children_6_11) > 3:
-                             st.error("The amount of people cannot go passed 3 people / Please enter an integer")
-
-                        if Number_of_Adults == ():
-                            st.error("There should be an integer")
-                        if Number_of_Adults < 2:
-                            st.error("It should not be less than 2 pax")
-                        if Number_of_Children_0_5 == ():
-                            Number_of_Children_0_5 = 0
-                        if Number_of_Children_6_11 == ():
-                            Number_of_Children_6_11 = 0
-                        Number_of_Adults_Guest_Price = Number_of_Adults * 12000
-                        Number_of_Children_6_11_Guest_Price = Number_of_Children_6_11 * 4000
-                        Number_of_Adults_Room_Price = (20000 if Number_of_Adults == 2 else 26000 if Number_of_Adults == 3 else st.error("There should be at least two adults"))
-                        st.write("BBQ / Normal")
-                        if "FOOD" not in st.session_state:
-                            st.session_state.FOOD = False
-                        if st.button("BBQ"):
-                            st.session_state.FOOD = not st.session_state.FOOD
-                        if st.session_state.FOOD:
-                            st.header("Booking Summary")
-                            st.markdown("""
-                                <style>
-                                .summary-box {
-                                    border: 1px solid #ccc;
-                                    border-radius: 12px;
-                                    padding: 20px;
-                                    margin-top: 20px;
-                                    background-color: #f9f9f9;
-                                }
-                                </style>
-                            """, unsafe_allow_html=True)
-
-                            st.markdown(f"""
-                                <div class="summary-box">
-                                    <p><strong>Guest Name:</strong> {Name_Entry}</p>
-                                    <p><strong> Starting Date:</strong> {Starting_Date}</p>
-                                    <p><strong>Ending Date:</strong> {Ending_Date}</p>
-                                    <p><strong>Meal Plan:</strong> {"BB"}</p>
-                                    <p><strong>Amount of Rooms:</strong> {'One'}</p>
-                                    <p><strong>Type of Room:</strong> {'Deluxe'}</p>
-                                    <p><strong>Amount of Pax:</strong> {Number_of_Adults+Number_of_Children_0_5+Number_of_Children_6_11}</p>
-                                    <p><strong>Extra Meal:</strong> {"BBQ"}</p>
-                                    <p><strong>Total Price</strong> {Number_of_Adults_Room_Price+Number_of_Children_6_11_Guest_Price+Number_of_Adults_Guest_Price+((Number_of_Adults*4000)+(Number_of_Children_6_11+2000))}</span></p>
-                                </div>
-                            """, unsafe_allow_html=True)
-
-
-
-BB_Func()
+    if Submit:
+        if Board_Select_Box == "BB":
+           if Amount_of_Rooms_Select_Box == 1:
+              Number_of_Adults_1_Price = (20000 if Number_of_Adults_1 == 2 else 260000)
+              Number_of_Children_6_11_1_Price = (Number_of_Children_6_11_1 * 4000)
+              error = False
+              if Type_of_Room_1 == "Deluxe":
+                 if (Number_of_Adults_1+Number_of_Children_0_5_1+Number_of_Children_6_11_1) > 3:
+                   st.markdown("<span style='color: red;'>The Amount of People Should Be less Than 3 People.</span>",unsafe_allow_html=True)
+                   error = True
+                 if Name_Entry == "":
+                   st.markdown("<span style='color: red;'>Please Enter a Name to Continue .</span>",unsafe_allow_html=True)
+                   error = True
+                 if Starting_Date == Ending_Date:
+                   st.markdown("<span style='color: red;'>Please Change the Date for it to not be the same.</span>", unsafe_allow_html=True)
+                   error = True
+                 if Starting_Date > Ending_Date:
+                   st.markdown("<span style='color: red;'>The Starting Date can't be greater than the ending date.</span>",unsafe_allow_html=True)
+                   error = True
+                 elif error is not True:
+                    if BN == "BBQ":
+                        st.markdown(
+                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',
+                            unsafe_allow_html=True)
+                        st.write("")
 st.write("© 2025 The Alunes Group. All rights reserved")
+st.write("© Powerhouse River Resort.")
 
