@@ -28,8 +28,8 @@ with st.form("Booking Registration"):
         BN = st.selectbox("Extra Meal Options", ["BBQ", "Normal"])
 
     Submit = st.form_submit_button("Get Summary")
-    
-    if Submit:
+
+if Submit:
         count = 0
         if Board_Select_Box == "BB":
            if Type_of_Room_1 == "Deluxe":
@@ -56,6 +56,8 @@ with st.form("Booking Registration"):
                                         Number_of_Children_6_11_1_Price = Number_of_Children_6_11_1 * 4000
                                         st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
+
+
                                     elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 1 and Number_of_Children_6_11_1 == 1:
                                         count = 1
                                         Number_of_Adults_1_Price = 26000
@@ -95,5 +97,59 @@ with st.form("Booking Registration"):
                                         Number_of_Adults_1_Price = 26000
                                         st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)} </strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
+
+
+
+
+                               if BN == "Normal":
+                                    if Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 1 and Number_of_Children_6_11_1 == 1:
+                                        count = 1
+                                        Number_of_Adults_1_Price = 20000
+                                        Number_of_Children_6_11_1_Price = Number_of_Children_6_11_1 * 4000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Standard</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 2000) + (Number_of_Children_6_11_1 * 1000)}</strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 1 and Number_of_Children_6_11_1 == 1:
+                                        count = 1
+                                        Number_of_Adults_1_Price = 26000
+                                        Number_of_Children_6_11_1_Price = Number_of_Children_6_11_1 * 4000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 2000) + (Number_of_Children_6_11_1 * 1000)}</strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 1:
+                                        count = 1
+                                        Number_of_Adults_1_Price = 20000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 2000)}</strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 1:
+                                        count = 1
+                                        Number_of_Adults_1_Price = 26000
+                                        Number_of_Children_6_11_1_Price = Number_of_Children_6_11_1 * 4000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 2000)}</strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 2 and Number_of_Children_6_11_1 == 1:
+                                        count = 1
+                                        Number_of_Adults_1_Price = 20000
+                                        Number_of_Children_6_11_1_Price = Number_of_Children_6_11_1 * 4000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 2000) + (Number_of_Children_6_11_1 * 1000)}</strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 3 and Number_of_Children_6_11_1 == 1:
+                                        count = 1
+                                        Number_of_Adults_1_Price = 26000
+                                        Number_of_Children_6_11_1_Price = Number_of_Children_6_11_1 * 4000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 2000) + (Number_of_Children_6_11_1 * 1000)}</strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 0 and Number_of_Children_6_11_1 == 0:
+                                        count = 0
+                                        Number_of_Adults_1_Price = 20000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 2000)} </strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
+                                    elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 0 and Number_of_Children_6_11_1 == 0:
+                                        count = 0
+                                        Number_of_Adults_1_Price = 26000
+                                        st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 2000)} </strong></p></div>',unsafe_allow_html=True)
+                                        st.write("")
 st.write("© 2025 The Alunes Group. All rights reserved")
-st.write("© Powerhouse River Resort.")
+st.write("© 2025 Powerhouse River Resort. All rights reserved")
+
+
+
+
