@@ -68,7 +68,7 @@ if Submit:
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:5 \n Total Price:{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}"
                                         Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary,
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary,
                                                                              file_name="Summary.txt")
                                     elif Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 1:
                                         count = 1
@@ -76,7 +76,7 @@ if Submit:
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:3 \n Total Price:{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}"
                                         Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}</strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                              file_name="Summary.txt")
                                     elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 1:
                                         count = 1
@@ -85,7 +85,7 @@ if Submit:
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:4 \n Total Price:{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}"
                                         Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}</strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                              file_name="Summary.txt")
                                     elif Number_of_Adults_1 == 2 and Number_of_Children_6_11_1 == 1:
                                         count = 1
@@ -94,7 +94,7 @@ if Submit:
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:3 \n Total Price:{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}"
                                         Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                              file_name="Summary.txt")
                                     elif Number_of_Adults_1 == 3 and Number_of_Children_6_11_1 == 1:
                                         count = 1
@@ -103,14 +103,14 @@ if Submit:
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:4 \n Total Price:{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}"
                                         Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary, file_name="Summary.txt")
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary, file_name="Summary.txt")
                                     elif Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 0 and Number_of_Children_6_11_1 == 0:
                                         count = 0
                                         Number_of_Adults_1_Price = 20000
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:2 \n Total Price:{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}"
                                         Summary =  st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)} </strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                              file_name="Summary.txt")
                                     elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 0 and Number_of_Children_6_11_1 == 0:
                                         count = 0
@@ -118,7 +118,7 @@ if Submit:
                                         Summary_T = f"Booking Summary \n Name:{Name_Entry} \n Check-in Date:{Starting_Date} \n Check-Out Date:{Ending_Date} \n Meal Plan:{Board_Select_Box} \n Amount of Room: 1 \n Type of Room: Deluxe \n Amount of people:3 \n Total Price:{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}"
                                         Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)} </strong></p></div>',unsafe_allow_html=True)
                                         st.write("")
-                                        Download_Button = st.download_button("↓ Download Summary", data=Summary,file_name="Summary.txt")
+                                        Download_Button = st.download_button(label="↓ Download Summary", data=Summary,file_name="Summary.txt")
 
 
 
@@ -146,7 +146,7 @@ if Submit:
                                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary,
                                                                             file_name="Summary.txt")
                                    elif Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 1:
                                        count = 1
@@ -156,7 +156,7 @@ if Submit:
                                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}</strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                             file_name="Summary.txt")
                                    elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 1:
                                        count = 1
@@ -167,7 +167,7 @@ if Submit:
                                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_0_5_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)}</strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                             file_name="Summary.txt")
                                    elif Number_of_Adults_1 == 2 and Number_of_Children_6_11_1 == 1:
                                        count = 1
@@ -178,7 +178,7 @@ if Submit:
                                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                             file_name="Summary.txt")
                                    elif Number_of_Adults_1 == 3 and Number_of_Children_6_11_1 == 1:
                                        count = 1
@@ -189,7 +189,7 @@ if Submit:
                                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1 + Number_of_Children_6_11_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + Number_of_Children_6_11_1_Price + (Number_of_Adults_1 * 4000) + (Number_of_Children_6_11_1 * 2000)}</strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary,
                                                                             file_name="Summary.txt")
                                    elif Number_of_Adults_1 == 2 and Number_of_Children_0_5_1 == 0 and Number_of_Children_6_11_1 == 0:
                                        count = 0
@@ -199,7 +199,7 @@ if Submit:
                                            f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)} </strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary_T,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary_T,
                                                                             file_name="Summary.txt")
                                    elif Number_of_Adults_1 == 3 and Number_of_Children_0_5_1 == 0 and Number_of_Children_6_11_1 == 0:
                                        count = 0
@@ -208,7 +208,7 @@ if Submit:
                                        Summary = st.markdown(f'<div style="background:linear-gradient(135deg,#f9fafb,#eef2f7);border-left:6px solid #4a90e2;padding:1.2rem;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.05);font-family:\'Segoe UI\',sans-serif;margin-top:1rem;"><h3 style=\'margin:0 0 0.5rem 0;color:#2c3e50;font-size:1.25rem;\'>Booking Summary</h3><p style=\'margin:0;font-size:1rem;line-height:1.5;color:#34495e;\'>Name: <strong>{Name_Entry}</strong><br>Check-in Date: <strong>{Starting_Date}</strong><br>Check-out Date: <strong>{Ending_Date}</strong><br>Meal Plan: <strong>{Board_Select_Box}</strong><br>Amount of Rooms: <strong> 1 </strong> <br> Type of Room: <strong>Deluxe</strong><br>Amount of People: <strong>{Number_of_Adults_1}</strong><br>Total Price: <strong>{Number_of_Adults_1_Price + (Number_of_Adults_1 * 4000)} </strong></p></div>',
                                            unsafe_allow_html=True)
                                        st.write("")
-                                       Download_Button = st.download_button("↓ Download Summary", data=Summary,
+                                       Download_Button = st.download_button(label="↓ Download Summary", data=Summary,
                                                                             file_name="Summary.txt")
 st.write("© 2025 The Alunes Group. All rights reserved")
 st.write("© 2025 Powerhouse River Resort. All rights reserved")
